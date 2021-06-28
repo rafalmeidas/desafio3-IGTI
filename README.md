@@ -1,5 +1,5 @@
 ﻿<h1 align="center">
-  Desafio Nº 2 - Eleições dos Heróis
+  Desafio Nº 3 - Despesas Mensais
 </h1>
 
 ## 🚀 Tecnologias
