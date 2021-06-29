@@ -1,4 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { IUser } from '../Services/api';
+import UserMenu from './UserMenu';
 
 const useStyles = makeStyles({
   header: {
@@ -9,12 +11,19 @@ const useStyles = makeStyles({
     marginBottom: '20px',
   },
 });
-export default function HeaderComponent() {
+
+interface IHeaderComponentProps {
+  OnSignOut: () => void;
+  user: IUser;
+}
+
+export default function HeaderComponent(props: IHeaderComponentProps) {
   const classes = useStyles();
 
   return (
     <header className={classes.header}>
       <h1>Despesas Mensais</h1>
+      <UserMenu user={props.user} OnSignOut={props.OnSignOut} />
     </header>
   );
 }
