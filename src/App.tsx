@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import DespesasPage from './Pages/DespesasPage';
 import Container from '@material-ui/core/Container';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import HeaderComponent from './Components/HeaderComponent';
 import { getUserEndpoint, IUser } from './Services/api';
 import { LoginScreen } from './Components/LoginScreen';
+import './index.css';
 
 function App() {
   const mesAtual = obtemMesAtual();
@@ -29,7 +30,7 @@ function App() {
           <Switch>
             <Route path="/despesas/:mes">
               <Container maxWidth="lg">
-                <DespesasPage />
+                <DespesasPage user={user} />
               </Container>
             </Route>
             <Redirect to={{ pathname: '/despesas/' + mesAtual }} />

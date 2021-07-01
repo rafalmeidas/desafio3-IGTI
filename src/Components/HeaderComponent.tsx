@@ -5,10 +5,15 @@ import UserMenu from './UserMenu';
 const useStyles = makeStyles({
   header: {
     display: 'flex',
-    justifyContent: 'center',
+    width: '100%',
     alignItems: 'center',
-    backgroundColor: '#4BA836',
-    marginBottom: '20px',
+    backgroundColor: '#3F51B5',
+    color: '#FFF',
+  },
+  text: {
+    textAlign: 'center',
+    flexShrink: 1,
+    flexGrow: 1,
   },
 });
 
@@ -22,8 +27,10 @@ export default function HeaderComponent(props: IHeaderComponentProps) {
 
   return (
     <header className={classes.header}>
-      <h1>Despesas Mensais</h1>
-      <UserMenu user={props.user} OnSignOut={props.OnSignOut} />
+      <h1 className={classes.text}>Despesas Mensais</h1>
+      <div>
+        <UserMenu OnSignOut={props.OnSignOut} />
+      </div>
     </header>
   );
 }
